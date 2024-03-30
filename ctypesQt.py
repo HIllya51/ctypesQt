@@ -80,3 +80,14 @@ class QWidget(PTR):
 QWidget_ctor.argtypes=QWidget,c_void_p,WindowFlags
 QWidget_dtor.argtypes=QWidget,
 QWidget_show.argtypes=QWidget,
+
+QPushButton_ctor=Qt5Widgets.__getattr__('??0QPushButton@@QEAA@PEAVQWidget@@@Z')
+QPushButton_dtor=Qt5Widgets.__getattr__('??1QPushButton@@UEAA@XZ')
+class QPushButton(PTR):
+    def __init__(self, parent=None) -> None:
+        QPushButton_ctor(self,parent)
+        self.p=parent   #保持parent的引用，否则会先析构parent
+    def __del__(self):
+        QPushButton_dtor(self)
+QPushButton_ctor.argtypes=QPushButton,c_void_p
+QPushButton_dtor.argtypes=QPushButton,

@@ -2,6 +2,7 @@
 #include<QApplication>
 #include<QFont>
 #include<QWidget>
+#include<QPushButton>
 #include<QDir>
 #include<thread>
 #include<queue>
@@ -13,6 +14,8 @@ int main(){
     QApplication app(_, nullptr);
     app.setFont(QFont("MS Shell Dlg 2", 10));
     QWidget qw(NULL);
+    QPushButton qp(&qw);
+
     qw.show();
     app.exec();
 }
