@@ -1,0 +1,3 @@
+
+QTBIN_DIR='./'
+QTPLUGIN_DIR='./'

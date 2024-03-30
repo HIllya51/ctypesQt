@@ -1,0 +1,6 @@
+bin
+.vscode
+__pycache__
+testqt/builds
+testqt/build
+testqt/.vscode
