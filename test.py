@@ -8,7 +8,7 @@ app=QApplication()
 app.setFont(QFont("MS Shell Dlg 2", 10))
 
 qw=QWidget()
-qpush=QPushButton(qw)
+qpush=QPushButton(qw,'xx')
 
 qw.show()
 app.exec()

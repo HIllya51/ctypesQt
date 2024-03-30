@@ -14,8 +14,8 @@ int main(){
     QApplication app(_, nullptr);
     app.setFont(QFont("MS Shell Dlg 2", 10));
     QWidget qw(NULL);
-    QPushButton qp(&qw);
-
+    //QPushButton qp(&qw);
+    QPushButton qp("xxx", &qw);
     qw.show();
     app.exec();
 }

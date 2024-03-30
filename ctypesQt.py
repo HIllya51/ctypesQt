@@ -83,11 +83,16 @@ QWidget_show.argtypes=QWidget,
 
 QPushButton_ctor=Qt5Widgets.__getattr__('??0QPushButton@@QEAA@PEAVQWidget@@@Z')
 QPushButton_dtor=Qt5Widgets.__getattr__('??1QPushButton@@UEAA@XZ')
+QPushButton_ctor_text=Qt5Widgets.__getattr__('??0QPushButton@@QEAA@AEBVQString@@PEAVQWidget@@@Z')
 class QPushButton(PTR):
-    def __init__(self, parent=None) -> None:
-        QPushButton_ctor(self,parent)
+    def __init__(self, parent=None,text=None) -> None:
+        if(text):
+            QPushButton_ctor_text(self,QString(text),parent)
+        else:
+            QPushButton_ctor(self,parent)
         self.p=parent   #保持parent的引用，否则会先析构parent
     def __del__(self):
         QPushButton_dtor(self)
 QPushButton_ctor.argtypes=QPushButton,c_void_p
 QPushButton_dtor.argtypes=QPushButton,
+QPushButton_ctor_text.argtypes=QPushButton,QString,c_void_p
